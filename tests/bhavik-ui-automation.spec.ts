@@ -66,9 +66,7 @@ test.describe("UI Components Login Page", () => {
     //after successfull login
     await expect(page).toHaveURL(/\/signup$/);
     //const boldElement = page.locator('b', {hasText: 'Enter Account Information'})
-    await page
-      .locator(".login-form", { hasText: "Enter Account Information" })
-      .isVisible();
+    await expect(page.locator('.login-form', { hasText: 'Enter Account Information' })).toBeVisible();
     // in case of duplicate email
     // await page.getByText('Email Address already exist!', {exact: true})
   });
